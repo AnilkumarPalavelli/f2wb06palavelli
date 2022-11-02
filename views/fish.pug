@@ -5,7 +5,12 @@ block content
   - var fish=[{fish_type:"Salmon",fish_weight:"5lbs",fish_cost:20},{fish_type:"Tuna",fish_weight:"3lbs",fish_cost:30},{fish_type:"Cod",fish_weight:"8lbs",fish_cost:50}]
   div(class="container-fluid")
   div(class="row")
-   each f in fish
-    div(class="col-sm-2") #{f.fish_type}, #{f.fish_weight}, #{f.fish_cost}
+   each f,index  in fish
+    div(class="col-sm-2" onclick =`buy(${index})`) #{f.fish_type}, #{f.fish_weight}, #{f.fish_cost}
+    script.
+        function buy(a)
+        {
+            alert(`You purchased Item ${a+1}`)
+        } 
 
    
